@@ -1,6 +1,7 @@
 This is scripts and patches used to build the AVR Tools PND.
 The workflow is:
-get-sources.sh outside dchrt (with subversion and git)
-sudo-prep-build.sh as root in dchrt
-build.sh (as builder in dchrt)
- 
+- get-sources.sh outside dchrt (with subversion and git)
+- sudo-prep-build.sh as root in dchrt
+- build.sh (as builder in dchrt)
+- cleanup.sh
+- make-pnd.sh
