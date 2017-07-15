@@ -1,0 +1,28 @@
+diff --git a/config.c b/config.c
+index 83fdecb..82e16dd 100644
+--- a/config.c
++++ b/config.c
+@@ -2210,9 +2210,11 @@ int git_config_set_multivar_in_file_gently(const char *config_filename,
+ 		in_fd = -1;
+ 
+ 		if (chmod(get_lock_file_path(lock), st.st_mode & 07777) < 0) {
++#if 0
+ 			error_errno("chmod on %s failed", get_lock_file_path(lock));
+ 			ret = CONFIG_NO_WRITE;
+ 			goto out_free;
++#endif
+ 		}
+ 
+ 		if (store.seen == 0)
+@@ -2417,9 +2419,11 @@ int git_config_rename_section_in_file(const char *config_filename,
+ 	fstat(fileno(config_file), &st);
+ 
+ 	if (chmod(get_lock_file_path(lock), st.st_mode & 07777) < 0) {
++#if 0
+ 		ret = error_errno("chmod on %s failed",
+ 				  get_lock_file_path(lock));
+ 		goto out;
++#endif
+ 	}
+ 
+ 	while (fgets(buf, sizeof(buf), config_file)) {

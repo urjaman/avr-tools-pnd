@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PXML xmlns="http://openpandora.org/namespaces/PXML">
+  <package id="avrtools">
+    <version major="1" minor="3" release="0" build="1" type="beta"/>
+    <author name="compiled by urjaman"/>
+    <titles>
+    <title lang="en_US">AVR Tools</title>
+    </titles>
+    <descriptions>
+        <description lang="en_US">Toolchain for the 8-bit AVR MCU.
+Includes avr-libc, avrdude, binutils, gdb, AVaRICE, avr-gcc, make and git.
+- git was hacked to work on FAT fs.
+- AVaRICE has a patch for ATXmega32E5</description>
+    </descriptions>
+    <icon src="icon.png"/>
+  </package>
+  <application id="avrtools" appdata="avrtools">
+
+    <title lang="en_US">AVR Tools</title>
+    <description lang="en_US">Toolchain for the 8-bit AVR MCU.</description>
+    <titles>
+    <title lang="en_US">AVR Tools</title>
+    </titles>
+    <descriptions>
+        <description lang="en_US">Toolchain for the 8-bit AVR MCU.</description>
+    </descriptions>
+
+    <author name="compiled by urjaman"/>
+    <licenses>
+    <license name="GPLv2+,GPLv3,Modified BSD" sourcecodeurl="https://github.com/urjaman/avr-tools-pnd" />
+    </licenses>
+
+    <version major="1" minor="3" release="0" build="1" type="beta"/>
+    <exec command="./run.sh" background="true" standalone="true"/>
+    <icon src="icon.png"/>
+    <info name="AVR Libc User Manual" type="text/html" src="./avr-libc-user-manual/index.html"/>
+    <categories>
+      <category name="Development"/>
+    </categories>
+  </application>
+</PXML>
