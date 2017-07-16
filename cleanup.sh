@@ -1,12 +1,13 @@
 #!/bin/sh
 set -x
 cd /mnt/utmp/avrtools/bin
-rm git-cvsserver gitk 
+rm gitk 
 strip *
 cd ..
 rm -rf include
 cd lib
 strip --strip-debug *.so
+rm libavr-sim.a
 cd ../libexec
 strip git-core/*
 cd gcc/avr/*/
