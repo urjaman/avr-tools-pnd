@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+. ./build-cfg
 cp -a ../src/git git
 cd git
 make $MJ prefix=$PREFIX CC=$CC all html 

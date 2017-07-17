@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+. ./build-cfg
 #avrdude
 mkdir ad; cd ad
 ../../src/avrdude*/configure --prefix=$PREFIX --disable-shared --disable-static

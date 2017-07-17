@@ -1,0 +1,5 @@
+set -e
+MJ=-j6
+PREFIX=/mnt/utmp/avrtools
+export PATH=$PREFIX/bin:$PATH
+cd bld

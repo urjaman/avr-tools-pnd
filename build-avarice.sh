@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+. ./build-cfg
 #avarice
 cp -a ../src/avarice avarice
 cd avarice

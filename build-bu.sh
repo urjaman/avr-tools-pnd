@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+. ./build-cfg
 #binutils
 mkdir bu; cd bu
 ../../src/binutils-gdb/configure --prefix=$PREFIX --target=avr --disable-nls

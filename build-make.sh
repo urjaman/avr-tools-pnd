@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+. ./build-cfg
 #make
 mkdir mk; cd mk
 ../../src/make*/configure --prefix=$PREFIX --disable-nls
