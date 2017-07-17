@@ -1,5 +1,5 @@
 #!/bin/sh
-export MJ=-j8
+export MJ=-j6
 set -e
 export PREFIX=/mnt/utmp/avrtools
 export PATH=$PREFIX/bin:$PATH
