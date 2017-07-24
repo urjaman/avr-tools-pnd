@@ -17,7 +17,7 @@ aka /mnt/utmp/avrtools/src is a directory for you to add your projects.
 This directory has udev rules for using some Atmel programmer devices
 (AVR Dragon, JTAGICEMKII, AVRISP mkII, AVR ICE) as a normal user.
 To install* them:
-$ cd ~/udev-ruls
+$ cd ~/udev-rules
 $ sudo ./install.sh 
 
 (If you plugged in your USB device before installing the rules, re-plug it.)
@@ -25,20 +25,20 @@ $ sudo ./install.sh
 
 AVaRICE
 --
-This isnt specific to this PND, but i thought a quick usage help would be useful.
-This is for the Atmel ICE and a PDI device (an xmega) since that is what i have.
-Image you're in your project directory, have flashed the device with some fw that
-you have the elf binary for there, and want to debug it.
+This isnt specific to this PND, but a quick usage help anyways.
+(For the Atmel ICE and a PDI device (an xmega) since that is what i have.)
+Imagine you're in your project directory, have flashed the device with
+some fw that you have the elf binary for there, and want to debug it.
 
 $ avarice -4 -X 127.0.0.1:4242 &
 $ avr-gdb some.elf
 (gdb) target remote :4242
 
 Use avarice --help for more parameters, but these used were:
--4, --edbg                  Atmel-ICE, or JTAGICE3 (firmware 3.x), or EDBG Integrated Debugger
--X, --pdi                   AVR part is an ATxmega device, using PDI.
+-4, --edbg Atmel-ICE, or JTAGICE3 (firmware 3.x), or EDBG Integrated Debugger
+-X, --pdi  AVR part is an ATxmega device, using PDI.
 
-And 127.0.0.1:4242 was [[HOST_NAME]:PORT] for the avarice server to listen on,
+127.0.0.1:4242 was [[HOST_NAME]:PORT] for the avarice server to listen on,
 you can omit the IP if you want it to listen on any interface.
 
 git
