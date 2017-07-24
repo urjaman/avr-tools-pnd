@@ -4,7 +4,8 @@ The workflow is:
 - sudo-prep-build.sh as root in dchrt
 - build.sh (as builder in dchrt)
 - cleanup.sh
-- make-pnd.sh
+- prep-pnd.sh
+- make-pnd.sh outside dchrt (because mksquashfs -comp xz, also performance)
 
 The PND contains a file versions.txt that contains the hashes/revisions of 
 the repos that the pnd was built from, including this repo. But in case
