@@ -3,6 +3,11 @@ Hi, some quick specifics of the PND
 
 Here, ~ is not your home but the PND directory, that is $HOME for the pnd.
 
+The PND sets LANG to en_US.UTF-8 because:
+1. The world now expects UTF-8
+2. The pandora OS is silly with no LANG
+3. The pnd has no translations, and you can edit run.sh if you like anyways.
+
 ~/src
 --
 aka /mnt/utmp/avrtools/src is a directory for you to add your projects.
@@ -22,8 +27,8 @@ AVaRICE
 --
 This isnt specific to this PND, but i thought a quick usage help would be useful.
 This is for the Atmel ICE and a PDI device (an xmega) since that is what i have.
-Image you're in your project directory, have flashed the device with some fw that you
-have the elf binary for there, and want to debug it.
+Image you're in your project directory, have flashed the device with some fw that
+you have the elf binary for there, and want to debug it.
 
 $ avarice -4 -X 127.0.0.1:4242 &
 $ avr-gdb some.elf
@@ -33,8 +38,8 @@ Use avarice --help for more parameters, but these used were:
 -4, --edbg                  Atmel-ICE, or JTAGICE3 (firmware 3.x), or EDBG Integrated Debugger
 -X, --pdi                   AVR part is an ATxmega device, using PDI.
 
-And 127.0.0.1:4242 was [[HOST_NAME]:PORT] for the avarice server to listen on, you
-can omit the IP if you want it to listen on any interface.
+And 127.0.0.1:4242 was [[HOST_NAME]:PORT] for the avarice server to listen on,
+you can omit the IP if you want it to listen on any interface.
 
 git
 --
@@ -43,3 +48,11 @@ we ship an etc/gitconfig to have it ignore executable bits (more FAT stuff)
 and use links and the html help files for documentation/help.
 The default config commands use ~/.gitconfig and i suggest you use
 that for setting your name & email as usual.
+
+~/run.sh and ~/init.sh
+--
+run.sh sets up the general environment for the PND and runs the Terminal.
+init.sh does the greeting you get inside the terminal.
+
+You can edit them as you wish, but beware to check for "collisions"
+on PND updates.
