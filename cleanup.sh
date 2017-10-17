@@ -1,7 +1,7 @@
 #!/bin/sh
-set -x
-cd /mnt/utmp/avrtools/bin
-rm gitk 
+. build-cfg
+cd $PREFIX/bin
+rm gitk
 strip *
 cd ..
 rm -rf include
