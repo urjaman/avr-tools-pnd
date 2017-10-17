@@ -6,7 +6,7 @@ git rev-parse HEAD
 cd src
 
 cd binutils-gdb
-echo -n "binutils-gdb: "
+echo -n "binutils: "
 git rev-parse HEAD
 cd ..
 
@@ -17,6 +17,11 @@ cd ..
 
 cd git
 echo -n "git: "
+git rev-parse HEAD
+cd ..
+
+cd dfu-programmer
+echo -n "dfu-programmer: "
 git rev-parse HEAD
 cd ..
 
@@ -33,3 +38,4 @@ cd ..
 ls -d1 avrdude*
 
 ls -d1 make*
+ls -d1 gdb*

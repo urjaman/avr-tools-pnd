@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-rm -rf bld
+[ -z "$1" ] && rm -rf bld
 mkdir bld
 ./build-bu.sh
 ./build-gcc.sh

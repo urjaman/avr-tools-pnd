@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+set -e
 . ./build-cfg
 #avarice
 cp -a ../src/avarice avarice
@@ -7,4 +8,3 @@ cd avarice
 ./configure --prefix=$PREFIX
 make $MJ
 make install
-
