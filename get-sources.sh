@@ -1,10 +1,15 @@
 #!/bin/sh
 # Run this outside dchrt (= on a modern system) with git and subversion
 set -e
+
+# !!! IF RE-RUNNING COMMENT THIS OUT !!!
 rm -rf src
-mkdir src; cd src
+
+# (also comment out the things that you already got done, but you know...)
+
+mkdir -p src; cd src
 #binutils
-git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_29-branch --depth=2
+git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_30-branch --depth=2
 
 #gdb
 wget ftp://ftp.gnu.org/gnu/gdb/gdb-8.0.tar.xz
@@ -12,10 +17,10 @@ tar -xf gdb-*.tar.xz
 rm gdb-*.tar.xz
 
 #gcc and support stuff
-git clone git://gcc.gnu.org/git/gcc.git -b gcc-7-branch --depth=2
+git clone git://gcc.gnu.org/git/gcc.git -b gcc-8-branch --depth=2
 wget https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2
 wget https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz
-wget http://www.mpfr.org/mpfr-current/mpfr-3.1.6.tar.bz2
+wget http://www.mpfr.org/mpfr-3.1.6/mpfr-3.1.6.tar.gz
 cd gcc;
 tar xf ../gmp-*.tar.*; mv gmp-* gmp
 tar xf ../mpc-*.tar.*; mv mpc-* mpc
