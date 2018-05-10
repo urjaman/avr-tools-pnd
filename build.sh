@@ -5,8 +5,9 @@ mkdir -p bld
 ./build-bu.sh
 ./build-gcc.sh
 ./build-libc.sh
-./build-git.sh
 ./build-avrdude.sh
 ./build-avarice.sh
-./build-make.sh
 ./build-gdb.sh
+#exit 0
+./build-git.sh
+./build-make.sh
