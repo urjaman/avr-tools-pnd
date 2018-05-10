@@ -1,6 +1,7 @@
 #!/bin/sh
 . ./build-cfg
 #avr-libc
+stashrm lc
 cp -a ../src/avr-libc lc
 cd lc
 ./bootstrap

@@ -1,6 +1,7 @@
+. ./funcs.sh
 set -e
 set -x
-MJ=-j6
-PREFIX=/mnt/utmp/avrtools
+MJ=-j3
+PREFIX=/home/urjaman/avrtools
 export PATH=$PREFIX/bin:$PATH
 cd bld

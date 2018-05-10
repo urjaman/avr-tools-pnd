@@ -1,6 +1,7 @@
 #!/bin/sh
+. ./funcs.sh
 set -e
-[ -z "$1" ] && rm -rf bld
+[ -z "$1" ] && stashrm bld
 mkdir -p bld
 ./build-bu.sh
 ./build-gcc.sh

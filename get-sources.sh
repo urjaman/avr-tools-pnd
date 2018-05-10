@@ -1,13 +1,14 @@
 #!/bin/sh
 # Run this outside dchrt (= on a modern system) with git and subversion
 set -e
+. ./funcs.sh
 
-# !!! IF RE-RUNNING COMMENT THIS OUT !!!
-rm -rf src
-
+# if re-running, comment this out..
+stashrm src
 # (also comment out the things that you already got done, but you know...)
 
 mkdir -p src; cd src
+
 #binutils
 git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_30-branch --depth=2
 
