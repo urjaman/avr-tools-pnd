@@ -1,6 +1,6 @@
 #!/bin/sh
 # Final touches on the PND
-PREFIX=/mnt/utmp/avrtools
+. ./paths-cfg
 cp -va pnd/* $PREFIX/
 cp versions.txt $PREFIX/
 cp -vL /usr/gcc6/lib/libstdc++.so.6 $PREFIX/lib

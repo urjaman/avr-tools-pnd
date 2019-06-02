@@ -1,28 +1,34 @@
 #!/bin/sh
 
+git_version() {
+REV=$(git rev-parse HEAD)
+BR=$(git branch | awk '/\*/ { print $2; }')
+echo $REV on $BR
+}
+
 echo -n "avr-tools-pnd: "
-git rev-parse HEAD
+git_version
 
 cd src
 
 cd binutils-gdb
 echo -n "binutils: "
-git rev-parse HEAD
+git_version
 cd ..
 
 cd gcc
 echo -n "gcc: "
-git rev-parse HEAD
+git_version
 cd ..
 
 cd git
 echo -n "git: "
-git rev-parse HEAD
+git_version
 cd ..
 
 cd dfu-programmer
 echo -n "dfu-programmer: "
-git rev-parse HEAD
+git_version
 cd ..
 
 cd avr-libc

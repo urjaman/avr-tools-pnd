@@ -10,15 +10,15 @@ stashrm src
 mkdir -p src; cd src
 
 #binutils
-git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_30-branch --depth=2
+git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_32-branch --depth=2
 
 #gdb
-wget ftp://ftp.gnu.org/gnu/gdb/gdb-8.0.tar.xz
+wget ftp://ftp.gnu.org/gnu/gdb/gdb-8.3.tar.xz
 tar -xf gdb-*.tar.xz
 rm gdb-*.tar.xz
 
 #gcc and support stuff
-git clone git://gcc.gnu.org/git/gcc.git -b gcc-8-branch --depth=2
+git clone git://gcc.gnu.org/git/gcc.git -b gcc-9-branch --depth=2
 wget https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2
 wget https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz
 wget http://www.mpfr.org/mpfr-3.1.6/mpfr-3.1.6.tar.gz

@@ -1,0 +1,3 @@
+PREFIX=/home/urjaman/avr-tools
+PREFIX_HOST=$PREFIX
+#PREFIX_HOST=~/dchrt/$PREFIX

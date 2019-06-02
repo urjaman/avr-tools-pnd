@@ -9,6 +9,7 @@ mkdir -p bld
 ./build-avrdude.sh
 ./build-avarice.sh
 ./build-gdb.sh
-#exit 0
+./build-dfup.sh
+exit 0
 ./build-git.sh
 ./build-make.sh

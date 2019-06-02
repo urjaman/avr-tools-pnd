@@ -2,6 +2,6 @@
 set -e
 set -x
 MJ=-j3
-PREFIX=/home/urjaman/avrtools
+. ./paths-cfg
 export PATH=$PREFIX/bin:$PATH
 cd bld

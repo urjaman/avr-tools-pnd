@@ -3,8 +3,9 @@ The workflow is:
 - get-sources.sh outside dchrt (with subversion and git)
 - sudo-prep-build.sh as root in dchrt
 - build.sh (as builder in dchrt)
-- cleanup.sh
-- prep-pnd.sh
+- build-libc-doc.sh outside dchrt (if the docs are needed)
+- cleanup.sh (in dchrt)
+- prep-pnd.sh (in dchrt)
 - make-pnd.sh outside dchrt (because mksquashfs -comp xz, also performance)
 
 The PND contains a file versions.txt that contains the hashes/revisions of 
@@ -16,6 +17,6 @@ of any issues, there is also a tarball of the src dir per pnd version:
 The scripts here can also be used to build "personal" AVR 
 toolchain setups, for that:
 - arch-deps.sh installs the dependencies needed on arch linux (good hints for others too)
-- edit build-cfg to put the PREFIX somewhere saner, like your home dir
+- edit paths-cfg to put the PREFIX somewhere saner, like your home dir
 - uncomment the exit 0 in build.sh to skip git and make
 

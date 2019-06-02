@@ -12,7 +12,9 @@ rm libavr-sim.a
 rm libavrdude.*
 rm libcc1.*
 cd ../libexec
-strip git-core/*
+if [ -d git-core ]; then
+	strip git-core/*
+fi
 cd gcc/avr/*/
 strip cc1 cc1plus collect2 lto-wrapper lto1
 cd ../../../../share
