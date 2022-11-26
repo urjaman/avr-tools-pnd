@@ -33,15 +33,14 @@ cd ..
 
 cd avr-libc
 echo -n "avr-libc: "
-svn info | awk '/Revision/ { print $2; }'
+git_version
 cd ..
 
 cd avarice
 echo -n "avarice: "
-svn info | awk '/Revision/ { print $2; }'
+git_version
 cd ..
 
 ls -d1 avrdude*
-
 ls -d1 make*
 ls -d1 gdb*

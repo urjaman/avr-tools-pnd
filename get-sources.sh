@@ -10,39 +10,43 @@ stashrm src
 mkdir -p src; cd src
 
 #binutils
-git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_32-branch --depth=2
+git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_39-branch --depth=2
 
 #gdb
-wget ftp://ftp.gnu.org/gnu/gdb/gdb-8.3.tar.xz
+wget ftp://ftp.gnu.org/gnu/gdb/gdb-8.3.1.tar.xz
 tar -xf gdb-*.tar.xz
 rm gdb-*.tar.xz
 
 #gcc and support stuff
-git clone git://gcc.gnu.org/git/gcc.git -b gcc-9-branch --depth=2
-wget https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2
-wget https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz
-wget http://www.mpfr.org/mpfr-3.1.6/mpfr-3.1.6.tar.gz
+git clone git://gcc.gnu.org/git/gcc.git -b releases/gcc-8 --depth=2
+#wget https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2
+#wget https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz
+#wget --no-check-certificate http://www.mpfr.org/mpfr-3.1.6/mpfr-3.1.6.tar.gz
 cd gcc;
-tar xf ../gmp-*.tar.*; mv gmp-* gmp
-tar xf ../mpc-*.tar.*; mv mpc-* mpc
-tar xf ../mpfr-*.tar.*; mv mpfr-* mpfr
+./contrib/download_prerequisites
+#tar xf ../gmp-*.tar.*; mv gmp-* gmp
+#tar xf ../mpc-*.tar.*; mv mpc-* mpc
+#tar xf ../mpfr-*.tar.*; mv mpfr-* mpfr
 cd ..
-rm gmp-*.tar.*  mpc-*.tar.* mpfr-*.tar.*
+#rm gmp-*.tar.*  mpc-*.tar.* mpfr-*.tar.*
 
 #avr-libc
-svn checkout http://svn.savannah.nongnu.org/svn/avr-libc/trunk/avr-libc/
+git clone https://github.com/avrdudes/avr-libc --depth=2
+#svn checkout http://svn.savannah.nongnu.org/svn/avr-libc/trunk/avr-libc/
 
 #AVaRICE
-svn checkout http://svn.code.sf.net/p/avarice/code/trunk/avarice/
-patch -p1 < ../atxmega32e5.patch
+git clone https://github.com/Florin-Popescu/avarice --depth=2
+#svn checkout http://svn.code.sf.net/p/avarice/code/trunk/avarice/
+#patch -p1 < ../atxmega32e5.patch
 
 #avrdude
-wget http://download.savannah.gnu.org/releases/avrdude/avrdude-6.3.tar.gz
-tar xf avrdude-*.tar.gz
-rm avrdude-*.tar.gz
+git clone https://github.com/avrdudes/avrdude --depth=2
+#wget http://download.savannah.gnu.org/releases/avrdude/avrdude-6.3.tar.gz
+#tar xf avrdude-*.tar.gz
+#rm avrdude-*.tar.gz
 
 #make
-wget https://ftp.gnu.org/gnu/make/make-4.2.1.tar.gz
+wget https://ftp.gnu.org/gnu/make/make-4.4.tar.gz
 tar xf make-*.tar.gz
 rm make-*.tar.gz
 
@@ -55,4 +59,5 @@ git clone https://github.com/dfu-programmer/dfu-programmer --depth=2
 
 # store some version info
 cd ..
+#echo "TODO" > versions.txt
 ./get-versions.sh > versions.txt
