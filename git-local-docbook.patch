@@ -1,0 +1,12 @@
+diff --git a/Documentation/docbook.xsl b/Documentation/docbook.xsl
+index da8b05b..d971fbb 100644
+--- a/Documentation/docbook.xsl
++++ b/Documentation/docbook.xsl
+@@ -1,6 +1,6 @@
+ <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+ 		version='1.0'>
+- <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl"/>
++ <xsl:import href="docbook-xsl-snapshot/html/docbook.xsl"/>
+  <xsl:output method="html"
+      encoding="UTF-8" indent="no"
+      doctype-public="-//W3C//DTD HTML 4.01//EN"

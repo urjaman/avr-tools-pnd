@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PXML xmlns="http://openpandora.org/namespaces/PXML">
   <package id="avrtools">
-    <version major="1" minor="4" release="0" build="0" type="beta"/>
+    <version major="1" minor="4" release="1" build="0" type="beta"/>
     <author name="compiled by urjaman"/>
     <titles>
     <title lang="en_US">AVR Tools</title>
@@ -30,7 +30,7 @@ Includes avr-libc, avrdude, binutils, gdb, AVaRICE, avr-gcc, make and git.
     <license name="GPLv2+,GPLv3,Modified BSD" sourcecodeurl="https://github.com/urjaman/avr-tools-pnd" />
     </licenses>
 
-    <version major="1" minor="4" release="0" build="0" type="beta"/>
+    <version major="1" minor="4" release="1" build="0" type="beta"/>
     <exec command="./run.sh" background="true" standalone="true"/>
     <icon src="icon.png"/>
     <info name="AVR Libc User Manual" type="text/html" src="./avr-libc-user-manual/index.html"/>

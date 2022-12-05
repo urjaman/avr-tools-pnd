@@ -45,6 +45,9 @@ patch -p1 < ../../git-chmod.patch
 # Our curl does not have CURLOPT_RESOLVE, this patch just
 # crudely disables use of that, making http.curloptresolve not work (i hope nobody cares)
 patch -p1 < ../../git-no-curlopt-resolve.patch
+# Do not do a remote access for whatever is the docbook-xsl thing
+patch -p1 < ../../git-local-docbook.patch
+(cd Documentation; tar xzf ../../../docbook-xsl-snapshot.tar.gz)
 cd ..
 
 # dfu-programmer
