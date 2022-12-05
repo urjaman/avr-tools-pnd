@@ -3,7 +3,7 @@
 #avrdude
 stashrm ad
 mkdir ad; cd ad
-../../src/avrdude*/configure --prefix=$PREFIX --disable-shared --disable-static
-make $MJ
-make install
+cmake -D CMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=$PREFIX -B build_linux ../../src/avrdude
+cmake --build build_linux
+cmake --build build_linux --target install
 

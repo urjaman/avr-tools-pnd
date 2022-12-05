@@ -1,8 +1,8 @@
 diff --git a/config.c b/config.c
-index 296a6d9..2d94cbb 100644
+index c058b2c..4eb0350 100644
 --- a/config.c
 +++ b/config.c
-@@ -2841,9 +2841,11 @@ int git_config_set_multivar_in_file_gently(const char *config_filename,
+@@ -3321,9 +3321,11 @@ int git_config_set_multivar_in_file_gently(const char *config_filename,
  		in_fd = -1;
  
  		if (chmod(get_lock_file_path(&lock), st.st_mode & 07777) < 0) {
@@ -14,7 +14,7 @@ index 296a6d9..2d94cbb 100644
  		}
  
  		if (store.seen_nr == 0) {
-@@ -3079,9 +3081,11 @@ static int git_config_copy_or_rename_section_in_file(const char *config_filename
+@@ -3573,9 +3575,11 @@ static int git_config_copy_or_rename_section_in_file(const char *config_filename
  	}
  
  	if (chmod(get_lock_file_path(&lock), st.st_mode & 07777) < 0) {

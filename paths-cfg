@@ -1,3 +1,8 @@
-PREFIX=/home/urjaman/avr-tools
-PREFIX_HOST=$PREFIX
+# dchrt-ng
+PREFIX=/mnt/utmp/avrtools
+PREFIX_HOST=/home/urjaman/dchrt-ng.container$PREFIX
 #PREFIX_HOST=~/dchrt/$PREFIX
+
+# not-pnd toolchain build
+#PREFIX=/home/urjaman/avr-tools
+#PREFIX_HOST=$PREFIX

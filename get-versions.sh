@@ -12,7 +12,7 @@ git_version
 cd src
 
 cd binutils-gdb
-echo -n "binutils: "
+echo -n "binutils-gdb: "
 git_version
 cd ..
 
@@ -41,6 +41,10 @@ echo -n "avarice: "
 git_version
 cd ..
 
-ls -d1 avrdude*
+cd avrdude
+echo -n "avrdude: "
+git_version
+cd ..
+
 ls -d1 make*
 ls -d1 gdb*

@@ -9,41 +9,28 @@ stashrm src
 
 mkdir -p src; cd src
 
-#binutils
+#binutils (and gdb, we build them seperate but use the same source)
 git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_39-branch --depth=2
 
-#gdb
-wget ftp://ftp.gnu.org/gnu/gdb/gdb-8.3.1.tar.xz
-tar -xf gdb-*.tar.xz
-rm gdb-*.tar.xz
-
-#gcc and support stuff
+#gcc and support stuff (N.B: intentionally old gcc)
 git clone git://gcc.gnu.org/git/gcc.git -b releases/gcc-8 --depth=2
-#wget https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2
-#wget https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz
-#wget --no-check-certificate http://www.mpfr.org/mpfr-3.1.6/mpfr-3.1.6.tar.gz
 cd gcc;
 ./contrib/download_prerequisites
-#tar xf ../gmp-*.tar.*; mv gmp-* gmp
-#tar xf ../mpc-*.tar.*; mv mpc-* mpc
-#tar xf ../mpfr-*.tar.*; mv mpfr-* mpfr
+# also provide them to binutils
+cp -vL isl ../binutils-gdb/isl
+cp -vL gmp ../binutils-gdb/gmp
+cp -vL mpc ../binutils-gdb/mpc
+cp -vL mpfr ../binutils-gdb/mpfr
 cd ..
-#rm gmp-*.tar.*  mpc-*.tar.* mpfr-*.tar.*
 
 #avr-libc
 git clone https://github.com/avrdudes/avr-libc --depth=2
-#svn checkout http://svn.savannah.nongnu.org/svn/avr-libc/trunk/avr-libc/
 
 #AVaRICE
 git clone https://github.com/Florin-Popescu/avarice --depth=2
-#svn checkout http://svn.code.sf.net/p/avarice/code/trunk/avarice/
-#patch -p1 < ../atxmega32e5.patch
 
 #avrdude
 git clone https://github.com/avrdudes/avrdude --depth=2
-#wget http://download.savannah.gnu.org/releases/avrdude/avrdude-6.3.tar.gz
-#tar xf avrdude-*.tar.gz
-#rm avrdude-*.tar.gz
 
 #make
 wget https://ftp.gnu.org/gnu/make/make-4.4.tar.gz
