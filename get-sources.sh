@@ -11,6 +11,7 @@ mkdir -p src; cd src
 
 #binutils (and gdb, we build them seperate but use the same source)
 git clone git://sourceware.org/git/binutils-gdb.git -b binutils-2_39-branch --depth=2
+cd binutils-gdb; patch -p1 < ../../gdb-misc-oldgcc.patch; cd ..
 
 #gcc and support stuff (N.B: intentionally old gcc)
 git clone git://gcc.gnu.org/git/gcc.git -b releases/gcc-8 --depth=2
@@ -39,7 +40,12 @@ rm make-*.tar.gz
 
 #git
 git clone https://github.com/git/git.git --depth=2
-cd git; patch -p1 < ../../git-chmod.patch; cd ..
+cd git; 
+patch -p1 < ../../git-chmod.patch
+# Our curl does not have CURLOPT_RESOLVE, this patch just
+# crudely disables use of that, making http.curloptresolve not work (i hope nobody cares)
+patch -p1 < ../../git-no-curlopt-resolve.patch
+cd ..
 
 # dfu-programmer
 git clone https://github.com/dfu-programmer/dfu-programmer --depth=2

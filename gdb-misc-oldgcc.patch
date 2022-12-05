@@ -1,0 +1,35 @@
+diff --git a/gdb/bt-utils.c b/gdb/bt-utils.c
+index 681f02c7..f44b0728 100644
+--- a/gdb/bt-utils.c
++++ b/gdb/bt-utils.c
+@@ -89,7 +89,7 @@ libbacktrace_print (void *data, uintptr_t pc, const char *filename,
+      files.  We are also careful to ensure we don't overflow this buffer.  */
+   char buf[20];
+ 
+-  snprintf (buf, sizeof (buf), "0x%" PRIxPTR " ", pc);
++  snprintf (buf, sizeof (buf), "0x%" PRIxPTR " ", (unsigned int)pc);
+   buf[sizeof (buf) - 1] = '\0';
+   sig_write (buf);
+   sig_write (function == nullptr ? "???" : function);
+diff --git a/gdb/dwarf2/index-write.c b/gdb/dwarf2/index-write.c
+index c3aad8dd..c3387998 100644
+--- a/gdb/dwarf2/index-write.c
++++ b/gdb/dwarf2/index-write.c
+@@ -46,6 +46,8 @@
+ #include <unordered_map>
+ #include <unordered_set>
+ 
++#include <math.h>
++
+ /* Ensure only legit values are used.  */
+ #define DW2_GDB_INDEX_SYMBOL_STATIC_SET_VALUE(cu_index, value) \
+   do { \
+@@ -595,7 +597,7 @@ class debug_names
+     gdb_assert (m_abbrev_table.empty ());
+     const size_t name_count = m_name_to_value_set.size ();
+     m_bucket_table.resize
+-      (std::pow (2, std::ceil (std::log2 (name_count * 4 / 3))));
++      (std::pow (2, std::ceil (log2 (name_count * 4 / 3))));
+     m_hash_table.reserve (name_count);
+     m_name_table_string_offs.reserve (name_count);
+     m_name_table_entry_offs.reserve (name_count);
