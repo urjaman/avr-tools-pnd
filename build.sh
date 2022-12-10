@@ -13,3 +13,4 @@ mkdir -p bld
 #exit 0
 ./build-git.sh
 ./build-make.sh
+./build-nano.sh

@@ -53,6 +53,11 @@ cd ..
 # dfu-programmer
 git clone https://github.com/dfu-programmer/dfu-programmer --depth=2
 
+# nano
+wget https://nano-editor.org/dist/v7/nano-7.0.tar.gz
+tar xf nano-*.tar.gz
+rm nano-*.tar.gz
+
 # store some version info
 cd ..
 #echo "TODO" > versions.txt

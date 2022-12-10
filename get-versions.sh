@@ -47,3 +47,4 @@ git_version
 cd ..
 
 ls -d1 make*
+ls -d1 nano*
