@@ -57,6 +57,10 @@ git clone https://github.com/dfu-programmer/dfu-programmer --depth=2
 wget https://nano-editor.org/dist/v7/nano-7.0.tar.gz
 tar xf nano-*.tar.gz
 rm nano-*.tar.gz
+# similar to git's chmod patch, in that we just make nano ignore chmod failures on its log files
+cd nano-*
+patch -p1 < ../../nano-chmod.patch
+cd ..
 
 # store some version info
 cd ..

@@ -7,3 +7,5 @@ mkdir nano; cd nano
 make $MJ
 make install
 cp doc/sample.nanorc $PREFIX/etc/
+# nano will use this path ($HOME/.nano in runtime) if it exists, and I'd like it to use that path
+mkdir $PREFIX/.nano

@@ -4,3 +4,6 @@
 
 [core]
 	fileMode = false
+
+[safe]
+	directory = *

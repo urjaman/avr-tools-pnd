@@ -1,0 +1,24 @@
+diff --git a/src/history.c b/src/history.c
+index d5b9678..9b1d4b4 100644
+--- a/src/history.c
++++ b/src/history.c
+@@ -336,8 +336,7 @@ void save_history(void)
+ 	}
+ 
+ 	/* Don't allow others to read or write the history file. */
+-	if (chmod(histname, S_IRUSR | S_IWUSR) < 0)
+-		jot_error(N_("Cannot limit permissions on %s: %s"), histname, strerror(errno));
++	chmod(histname, S_IRUSR | S_IWUSR);
+ 
+ 	if (!write_list(searchtop, histfile) || !write_list(replacetop, histfile) ||
+ 											!write_list(executetop, histfile))
+@@ -437,8 +436,7 @@ void save_poshistory(void)
+ 	}
+ 
+ 	/* Don't allow others to read or write the history file. */
+-	if (chmod(poshistname, S_IRUSR | S_IWUSR) < 0)
+-		jot_error(N_("Cannot limit permissions on %s: %s"), poshistname, strerror(errno));
++	chmod(poshistname, S_IRUSR | S_IWUSR);
+ 
+ 	for (item = position_history; item != NULL; item = item->next) {
+ 		char *path_and_place;
