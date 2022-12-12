@@ -8,11 +8,14 @@ The workflow is:
 - prep-pnd.sh (in dchrt)
 - make-pnd.sh outside dchrt (because mksquashfs -comp xz, also performance)
 
-The PND contains a file versions.txt that contains the hashes/revisions of 
-the repos that the pnd was built from, including this repo. But in case
-of any issues, there is also a tarball of the src dir per pnd version:
+To get the contents of the src directory that was used to build a specific
+PND version, refer to the links below (latest one is a squashfs image,
+i thought that might be more compact to use than a tarballl;
+also i don't expect anybody to use it, i'm just dropping these for
+full GPL compliance):
 
-- 1.3.0.*:  https://urjaman.ddns.net/avr-tools-src-170716.tar.xz
+- 1.4.*.*: https://urja.dev/avrtools-src-14.sqfs
+- 1.3.0.*:  https://urja.dev/avr-tools-src-170716.tar.xz
 
 The scripts here can also be used to build "personal" AVR 
 toolchain setups, for that:
